@@ -2,11 +2,16 @@
 
 $ch = curl_init();
 
+$headers = [
+    "Authorization: Client-ID 8JRk7nea5HoqJ5Wu9zhGtPw4yUA-adrVXunyrmx3KWg"
+];
+
 // curl_setopt($ch, CURLOPT_URL, "https://randomuser.me/api");
 // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt_array($ch,[
-    CURLOPT_URL => "https://api.openweathermap.org/data/2.5/weather?q=London&appid=7777fed14aa02ec38418591e6a4fd4e3",
+    CURLOPT_URL => "https://api.unsplash.com/photos/random",
     CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_HTTPHEADER => $headers
 ]);
 
 $response = curl_exec($ch);
